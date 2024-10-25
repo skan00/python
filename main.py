@@ -1,42 +1,48 @@
 # main.py
-from todo_list import add_task, view_tasks, delete_task, todo_list_menu
+from todo_list import todo_list_menu, add_task, view_tasks, delete_task, modify_task
 from currency_converter import currency_converter
 from password_generator import password_generator
 
-def display_menu():
-    print("\nMyDailyTools - Select a Program")
-    print("1. Todo List")
-    print("2. Currency Converter")
-    print("3. Password Generator")
-    print("4. Exit")
-
-def main():
+def main_menu():
     while True:
-        display_menu()
-        choice = input("Enter your choice: ")
+        print("\n--- My Daily Tools ---")
+        print("1. Todo List")
+        print("2. Currency Converter")
+        print("3. Password Generator")
+        print("4. Exit")
+        
+        choice = input("Choose an option: ")
+        
         if choice == "1":
-            while True:
-                todo_list_menu()
-                todo_choice = input("Enter your choice: ")
-                if todo_choice == "1":
-                    add_task()
-                elif todo_choice == "2":
-                    view_tasks()
-                elif todo_choice == "3":
-                    delete_task()
-                elif todo_choice == "4":
-                    break
-                else:
-                    print("Invalid option. Please try again.")
+            todo_list_operations()
         elif choice == "2":
             currency_converter()
         elif choice == "3":
             password_generator()
         elif choice == "4":
-            print("Exiting MyDailyTools. Goodbye!")
+            print("Exiting My Daily Tools. Goodbye!")
             break
         else:
-            print("Invalid option. Please try again.")
+            print("Invalid option. Please choose a number from 1 to 4.")
+
+def todo_list_operations():
+    while True:
+        todo_list_menu()
+        choice = input("Choose an option: ")
+        
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            view_tasks()
+        elif choice == "3":
+            delete_task()
+        elif choice == "4":
+            modify_task()
+        elif choice == "5":
+            print("Returning to main menu.")
+            break
+        else:
+            print("Invalid option. Please choose a number from 1 to 5.")
 
 if __name__ == "__main__":
-    main()
+    main_menu()
