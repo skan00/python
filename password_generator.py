@@ -51,3 +51,5 @@ def password_generator():
             print(f"Generated password (manual mode): {password}")
     else:
         print("Invalid choice. Please select 1 for Default mode or 2 for Manual mode.")
+if __name__ == "__main__":
+    password_generator()

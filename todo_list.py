@@ -72,3 +72,26 @@ def modify_task():
             print("Task updated and saved.")
         else:
             print("Invalid task number.")
+
+
+def todo_list_operations():
+    while True:
+        todo_list_menu()
+        choice = input("Choose an option: ")
+        
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            view_tasks()
+        elif choice == "3":
+            delete_task()
+        elif choice == "4":
+            modify_task()
+        elif choice == "5":
+            print("Returning to main menu.")
+            break
+        else:
+            print("Invalid option. Please choose a number from 1 to 5.")
+
+if __name__ == "__main__":
+    todo_list_operations()
