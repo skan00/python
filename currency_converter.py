@@ -42,3 +42,5 @@ def currency_converter():
     
     # Display result
     print(f"{currencies[from_currency]['symbol']}{amount:.2f} {from_currency} = {currencies[to_currency]['symbol']}{converted_amount:.2f} {to_currency}")
+if __name__ == "__main__":
+    currency_converter()
